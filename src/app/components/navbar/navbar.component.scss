@@ -1,0 +1,49 @@
+nav{
+  width: 100%;
+  background-color: #fff;
+  border-radius: 12px;
+
+  .content{
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: .5rem;
+
+    h1{
+      color: #97A5B9;
+
+      span{
+        color: #8b16f8;
+      }
+    }
+
+    ul{
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: .5rem;
+      list-style-type: none;
+
+      li{
+        a,
+        button{
+          width: 100%;
+          color: #777777;
+          font-weight: 500;
+          transition: var(--ts);
+
+
+          &.active {
+            color: #836fda;
+            background-color: #efecff;
+          }
+        }
+      }
+    }
+
+    a{
+
+    }
+  }
+}

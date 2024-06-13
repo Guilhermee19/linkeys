@@ -1,0 +1,10 @@
+:root {
+  font-size: calc(16px + 0.3125vw);
+  --ts: all 0.2s linear;
+  --br: 0.5rem;
+  --elastic: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+
+  // ? Scrollbar
+  --scroll-track: rgb(185, 185, 185);
+  --scroll-thumb: rgb(59, 59, 59);
+}
