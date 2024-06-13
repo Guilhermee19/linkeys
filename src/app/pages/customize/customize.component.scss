@@ -1,0 +1,17 @@
+main{
+  position: relative;
+  width: 100%;
+  margin-top: 24px;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 24px;
+
+  .pre_view,
+  .content{
+    width: calc(50% - 12px);
+    background-color: #fff;
+    border-radius: 12px;
+    padding: 24px;
+  }
+}
