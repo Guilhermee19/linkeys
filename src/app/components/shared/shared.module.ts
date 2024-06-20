@@ -5,12 +5,14 @@ import { NgModule } from '@angular/core';
 import { IconDirective } from '../../directives/icon.directive';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { RouterLink } from '@angular/router';
+import { MobileComponent } from './preview/mobile/mobile.component';
 
 const IMPORTS = [
   MatButtonModule,
   FormsModule,
   ReactiveFormsModule,
   MatInputModule,
+  MobileComponent
 ];
 
 const DECLARATIONS = [

@@ -1,28 +1,26 @@
 <nav>
   <div class="content">
-    <h1> <span>< Dev</span>Links /> </h1>
+    <h1><span>< ind</span>Key /></h1>
 
     <ul>
-        @for (item of navbarPages; track item) {
-          <li>
-            <a
-              mat-button
-              [routerLink]="item.link"
-              routerLinkActive="active"
-              [routerLinkActiveOptions]="{
-                exact: true
-                }"
-                >
-                <i [icon]="item.icon"></i>
-              <span class="one-line">{{ item.label }}</span>
-            </a>
-          </li>
-        }
+      @for (item of navbarPages; track item) {
+      <li>
+        <a
+          mat-button
+          [routerLink]="item.link"
+          routerLinkActive="active"
+          [routerLinkActiveOptions]="{
+            exact: true
+          }"
+        >
+          <i [icon]="item.icon"></i>
+          <span class="one-line">{{ item.label }}</span>
+        </a>
+      </li>
+      }
     </ul>
 
-    <a class="secundary" mat-button>
-      Preview
-    </a>
+    <a class="secundary" mat-button routerLink="/preview"> Preview </a>
   </div>
 </nav>
 
