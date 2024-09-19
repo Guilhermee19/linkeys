@@ -6,7 +6,7 @@ export const NAVBAR_PAGES: {
 }[] = [
   {
     label: 'Links',
-    icon: 'links',
+    icon: 'link',
     link: '/custom',
   },
   {

@@ -11,5 +11,4 @@ import { SharedModule } from '../../components/shared/shared.module';
   styleUrl: './customize.component.scss'
 })
 export class CustomizeComponent {
-
 }

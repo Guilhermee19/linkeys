@@ -1,11 +1,70 @@
 <section>
   <header>
-    <h1>Customize your links</h1>
+    <h1 class="f-14">Personalizar as seus links</h1>
     <p class="f-10">
-      Add/edit/remove links below and then share all your profiles with the
-      world!
+      Conecte, ajuste e personalize seus links, e depois compartilhe todos os seus perfis com o mundo de forma fácil e divertida!
     </p>
 
-    <button class="secundary" mat-button>+ Add new link</button>
+    <button mat-stroked-button class="btn-add-link" (click)="addLink()">+ Add new link</button>
   </header>
+
+  <form [formGroup]="form_links">
+    <div formArrayName="links" class="inputs">
+      @for (link of form_links.controls.links.controls; track $index) {
+        <div [formGroupName]="$index" class="style-button">
+          <header>
+            <h2 class="f-10"> Link #{{$index+1}}</h2>
+
+            <button mat-flat-button type="button" class="f-10" (click)="removeLink($index)"> Remover</button>
+          </header>
+
+          <div class="card_input">
+            <i [icon]="icon"></i>
+            <mat-select formControlName="platform" name="type" (selectionChange)="setIcon(link)">
+              @for (item of platforms; track $index) {
+                <mat-option [value]="item.platform">
+                  <i [icon]="item.icon"></i>
+                  <span class="space-left">{{ item.name }}</span>
+                </mat-option>
+              }
+            </mat-select>
+          </div>
+
+          @if(link.get('platform')?.value === 'OTHERS'){
+            <div class="card_input">
+              <i icon="titulo"></i>
+              <input
+                title="text"
+                type="titulo"
+                formControlName="titulo"
+                placeholder="Title"
+              />
+            </div>
+          }
+
+          <div class="card_input">
+            <i icon="link"></i>
+            <input
+              title="text"
+              type="url"
+              formControlName="url"
+              placeholder="Link"
+            />
+          </div>
+
+          <!-- <label for="color_bg">Background Color:</label>
+          <input id="color_bg" formControlName="color_bg" />
+
+          <label for="color_text">Text Color:</label>
+          <input id="color_text" formControlName="color_text" />
+
+          <label for="button_type">Button Type:</label>
+          <input id="button_type" formControlName="button_type" />
+
+          <label for="url">Link:</label>
+          <input id="url" formControlName="url" /> -->
+        </div>
+      }
+    </div>
+  </form>
 </section>

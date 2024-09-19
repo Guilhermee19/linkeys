@@ -1,6 +1,10 @@
+@import 'styles/animations';
 @import 'styles/buttons';
+@import 'styles/input';
+@import 'styles/media';
 @import 'styles/scroll';
 @import 'styles/theming';
+@import 'styles/typography';
 @import 'styles/variables';
 
 * {
@@ -18,7 +22,7 @@ body {
   margin: 0;
   font-family: Roboto, 'Helvetica Neue', sans-serif;
   background-color: #fafafa;
-  padding: 1rem;
+  padding: .5rem;
 }
 
 .svg-inline--fa {

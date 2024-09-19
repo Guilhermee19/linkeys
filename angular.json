@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "link-sharing-app": {
+    "linkeys": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -17,7 +17,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/link-sharing-app",
+            "outputPath": "dist/linkeys",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -69,10 +69,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "link-sharing-app:build:production"
+              "buildTarget": "linkeys:build:production"
             },
             "development": {
-              "buildTarget": "link-sharing-app:build:development"
+              "buildTarget": "linkeys:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -103,5 +103,8 @@
         }
       }
     }
+  },
+  "cli": {
+    "analytics": false
   }
 }

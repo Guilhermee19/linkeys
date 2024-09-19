@@ -2,11 +2,21 @@
 .mat-mdc-button-base {
   text-decoration: none;
 
-  &.mdc-button,
-  &.mat-raised-button {
-    height: 45px;
+  &.mat-mdc-unelevated-button{
+    --mdc-filled-button-label-text-color: var(--label) !important;
+    --mdc-filled-button-container-color: transparent !important;
+    padding: 0 !important;
+    width: max-content !important;
+  }
+
+  &.mat-mdc-outlined-button{
+    --mdc-outlined-button-label-text-color: var(--color-primary);
+    --mdc-outlined-button-outline-color: var(--color-primary);
+    // height: 45px;
     padding: 10px 25px;
-    border-radius: 12px;
+    border-radius: var(--br);
+    background-color: #fff;
+    border: 2px solid var(--color-primary);
 
     .mdc-button__label{
       display: flex;
@@ -15,14 +25,8 @@
     }
 
     &.primary {
-      background-color: #836fda;
+      background-color: var(--color-primary);
       color: #fff;
-    }
-
-    &.secundary {
-      background-color: #fff;
-      border: 2px solid #836fda;
-      color: #836fda;
     }
   }
 }
