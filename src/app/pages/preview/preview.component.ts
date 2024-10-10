@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { MatButton } from '@angular/material/button';
 
 @Component({
   selector: 'app-preview',
   standalone: true,
-  imports: [],
+  imports: [MatButton],
   templateUrl: './preview.component.html',
   styleUrl: './preview.component.scss'
 })

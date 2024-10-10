@@ -1,4 +1,4 @@
-import { Component, inject, Input, OnInit } from '@angular/core';
+import { ChangeDetectorRef, Component, inject, Input, OnInit } from '@angular/core';
 import { FormArray, FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MatButtonModule } from '@angular/material/button';
 import { SharedModule } from '../../shared/shared.module';
@@ -14,6 +14,7 @@ import { PLATFORM } from '../../../constants/platform';
 })
 export class LinksComponent implements OnInit{
   private fb = inject(FormBuilder)
+  private cdr = inject(ChangeDetectorRef)
 
   platforms = PLATFORM
 
@@ -22,7 +23,7 @@ export class LinksComponent implements OnInit{
     color_bg: ['', Validators.required],
     links: this.fb.array([])  // Inicializa o FormArray para os links
   });
-  icon = 'whatsapp';
+  selectIcon = 'whatsapp';
 
   ngOnInit(){
     this.addLink();
@@ -50,9 +51,16 @@ export class LinksComponent implements OnInit{
   }
 
   setIcon(platform: any){
-    const icon = PLATFORM.find(el => el.platform === platform)?.icon;
+    const icon = PLATFORM.find(el => el.platform === platform.value.platform)?.icon;
+
     if(!icon) return;
 
-    this.icon = icon
+    this.selectIcon = icon;
+
+    this.cdr.markForCheck();
+  }
+
+  get matIcon(){
+    return this.selectIcon;
   }
 }

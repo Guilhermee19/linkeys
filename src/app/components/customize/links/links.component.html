@@ -19,7 +19,7 @@
           </header>
 
           <div class="card_input">
-            <i [icon]="icon"></i>
+            <i [icon]="matIcon"></i>
             <mat-select formControlName="platform" name="type" (selectionChange)="setIcon(link)">
               @for (item of platforms; track $index) {
                 <mat-option [value]="item.platform">
